@@ -1,11 +1,11 @@
-# Citizens Stream Processing Demos
+# banking Stream Processing Demos
 
 This repository contains stream processing demonstrations and use cases for monitoring and alerting systems.
 
 ## Project Structure
 
 ```
-citizens-streamprocessing-demos/
+banking-streamprocessing-demos/
 ├── terraform/                          # Infrastructure as Code
 │   ├── main.tf                        # EC2 instance configuration
 │   ├── variables.tf                   # Configuration variables
@@ -91,7 +91,7 @@ See [terraform/README.md](terraform/README.md) for detailed documentation.
 1. **Clone the repository:**
    ```bash
    git clone <repository-url>
-   cd citizens-streamprocessing-demos
+   cd banking-streamprocessing-demos
    ```
 
 2. **Navigate to a use case:**

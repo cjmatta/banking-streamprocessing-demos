@@ -33,7 +33,7 @@ variable "root_volume_size" {
 variable "project_name" {
   description = "Name of the project for tagging"
   type        = string
-  default     = "citizens-streamprocessing-demos"
+  default     = "banking-streamprocessing-demos"
 }
 
 variable "allowed_cidr_blocks" {

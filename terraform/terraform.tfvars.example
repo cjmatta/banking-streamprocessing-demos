@@ -14,7 +14,7 @@ instance_type = "t3.medium"
 root_volume_size = 20
 
 # Project Configuration (Optional)
-project_name = "citizens-streamprocessing-demos"
+project_name = "banking-streamprocessing-demos"
 
 # Security Configuration (Optional)
 # allowed_cidr_blocks = ["0.0.0.0/0"]  # Allow SSH from anywhere (default)

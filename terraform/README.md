@@ -84,7 +84,7 @@ The security group opens the following ports:
 
 4. **Clone your project**:
    ```bash
-   git clone <your-repo-url> ~/projects/citizens-streamprocessing-demos
+   git clone <your-repo-url> ~/projects/banking-streamprocessing-demos
    ```
 
 ## Outputs
@@ -125,5 +125,5 @@ terraform destroy
 | `key_name` | SSH key pair name | - | Yes |
 | `instance_type` | EC2 instance type | t3.medium | No |
 | `root_volume_size` | Root volume size (GB) | 20 | No |
-| `project_name` | Project name for tagging | citizens-streamprocessing-demos | No |
+| `project_name` | Project name for tagging | banking-streamprocessing-demos | No |
 | `allowed_cidr_blocks` | CIDR blocks for SSH access | ["0.0.0.0/0"] | No | 
