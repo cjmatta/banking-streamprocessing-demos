@@ -1,0 +1,21 @@
+# AWS Configuration
+aws_region = "us-east-2"
+
+# VPC Configuration (REQUIRED)
+# Replace with your actual VPC ID
+vpc_id = "vpc-xxxxxxxxx"
+
+# SSH Key Configuration (REQUIRED)
+# Replace with your actual key pair name (without .pem extension)
+key_name = "your-key-pair-name"
+
+# EC2 Instance Configuration (Optional - defaults provided)
+instance_type = "t3.medium"
+root_volume_size = 20
+
+# Project Configuration (Optional)
+project_name = "citizens-streamprocessing-demos"
+
+# Security Configuration (Optional)
+# allowed_cidr_blocks = ["0.0.0.0/0"]  # Allow SSH from anywhere (default)
+# allowed_cidr_blocks = ["YOUR_IP/32"]  # More secure - replace with your IP 

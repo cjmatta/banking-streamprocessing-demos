@@ -1,0 +1,118 @@
+{
+    "generators": [
+        {
+            "topic": "message_status",
+            "fork": {
+                "key": {
+                    "_gen": "uuid"
+                },
+                "maxForks": 100,
+                "stagger": {
+                    "ms": 250
+                }
+            },
+            "varsOnce": {
+                "messageId": {
+                    "_gen": "var",
+                    "var": "forkKey"
+                },
+                "phoneNumber": {
+                    "_gen": "uniformDistribution",
+                    "bounds": [
+                        10000000000,
+                        19999999999
+                    ],
+                    "decimals": 0
+                },
+                "carrier": {
+                    "_gen": "oneOf",
+                    "choices": [
+                        "att",
+                        "t-mobile",
+                        "verizon"
+                    ]
+                }
+            },
+            "key": {
+                "messageId": {
+                    "_gen": "var",
+                    "var": "messageId"
+                }
+            },
+            "value": {
+                "status": "sent",
+                "phoneNumber": {
+                    "_gen": "var",
+                    "var": "phoneNumber"
+                },
+                "carrier": {
+                    "_gen": "var",
+                    "var": "carrier"
+                },
+                "timestamp": {
+                    "_gen": "now"
+                }
+            },
+            "stateMachine": {
+                "_gen": "stateMachine",
+                "initial": "s1",
+                "transitions": {
+                    "s1": "s2"
+                },
+                "states": {
+                    "s1": {
+                        "value": {
+                            "status": "sent"
+                        }
+                    },
+                    "s2": {
+                        "value": {
+                            "status": "delivered"
+                        },
+                        "localConfigs": {
+                            "delay": {
+                                "rate": 0.03,
+                                "ms": {
+                                    "_gen": "normalDistribution",
+                                    "mean": 120000,
+                                    "sd": 10000
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "localConfigs": {
+                "throttleMs": 1000
+            }
+        }
+    ],
+    "connections": {
+        "localKafka": {
+            "kind": "kafka",
+            "producerConfigs": {
+                "bootstrap.servers": {
+                    "_gen": "env",
+                    "var": "BOOTSTRAP_URL"
+                },
+                "key.serializer": "io.confluent.kafka.serializers.KafkaAvroSerializer",
+                "value.serializer": "io.confluent.kafka.serializers.KafkaAvroSerializer",
+                "schema.registry.url": {
+                    "_gen": "env",
+                    "var": "SCHEMA_REGISTRY_URL"
+                },
+                "basic.auth.credentials.source": "USER_INFO",
+                "basic.auth.user.info": {
+                    "_gen": "env",
+                    "var": "SCHEMA_REGISTRY_AUTH"
+                },
+                "security.protocol": "SASL_SSL",
+                "sasl.mechanism": "PLAIN",
+                "sasl.jaas.config": {
+                    "_gen": "env",
+                    "var": "CONFLUENT_CLOUD_AUTH"
+                }
+            }
+        }
+    }
+}
