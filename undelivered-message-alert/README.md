@@ -1,6 +1,6 @@
 # Undelivered Message Alert Producer
 
-A sophisticated message delivery status producer that simulates a real-world messaging system for banking and telecommunications use cases. This producer generates phone numbers and tracks message delivery statuses through various stages (sent, delivered, delayed, failed).
+A message delivery status producer that simulates a real-world messaging system for banking and telecommunications use cases. This producer generates phone numbers and tracks message delivery statuses through various stages (sent, delivered, delayed, failed).
 
 ## Features
 
