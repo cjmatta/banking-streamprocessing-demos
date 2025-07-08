@@ -5,9 +5,8 @@ A message delivery status producer that simulates a real-world messaging system 
 ## Features
 
 - **Realistic Message Lifecycle**: Simulates message delivery with configurable success/failure rates
-- **Multi-Carrier Support**: Supports major carriers (Verizon, AT&T, T-Mobile)
 - **Kafka Integration**: Publishes message status updates to Kafka topics with Avro serialization
-- **SQLite Tracking**: Local database for message and phone number tracking
+- **SQLite Tracking**: Local database for message and phone number tracking to ensure state between producer runs
 - **Configurable Delivery Behavior**: Customizable delivery rates and timing
 - **Dry Run Mode**: Test without sending to Kafka
 - **Real-time Statistics**: Monitor delivery rates and system performance
